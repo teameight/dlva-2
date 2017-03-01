@@ -71,6 +71,9 @@ src="https://www.facebook.com/tr?id=1887774541448817&ev=PageView&noscript=1"
 <!-- DO NOT MODIFY -->
 <!-- End Facebook Pixel Code -->
 
+<?php if ( !is_page('sign-me-up') && !is_page('profile') ) : ?>
+
+<!-- FullStory code -->
 <script>
 window['_fs_debug'] = false;
 window['_fs_host'] = 'www.fullstory.com';
@@ -88,12 +91,15 @@ window['_fs_namespace'] = 'FS';
     ';path=/;expires='+new Date(0).toUTCString();i=d.indexOf('.');if(i<0)break;d=d.slice(i+1)}}};
 })(window,document,window['_fs_namespace'],'script','user');
 </script>
+<!-- End FullStory code -->
+
+<?php endif; ?>
 
 	<?php wp_head(); ?>
 
 </head>
 
-<body <?php 
+<body <?php
 	body_class('themerex_body body_style_' . esc_attr($body_style) 
 		. ' body_' . (themerex_get_custom_option('body_filled')=='yes' ? 'filled' : 'transparent')
 		. ' theme_skin_' . esc_attr($theme_skin)
